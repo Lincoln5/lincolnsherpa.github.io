@@ -10090,8 +10090,8 @@ p.lead {
   justify-content: center;
   height: 3.5rem;
   width: 3.5rem;
-  background-color: #495057;
-  color: #fff;
+  background-color:#495057;
+  color:#fff;
   border-radius: 100%;
   font-size: 1.5rem;
   margin-right: 1.5rem;
@@ -10132,4 +10132,18 @@ section.resume-section .resume-section-content {
     padding-top: 5rem;
     padding-bottom: 5rem;
   }
+}
+
+
+.svg {
+  display: transparent;
+  margin: 0 auto;
+}
+
+.path {
+  fill: none;
+  stroke: black;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
