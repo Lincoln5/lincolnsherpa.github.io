@@ -272,7 +272,7 @@
                               float a1_a=0.01;
                               float a2_v=0;
                               float a2_a=0.01;
-                              float g=0.5;
+                              float g=0.9;
                               float prev_1=0;
                               float prev_2=0;
                               float cx;
@@ -325,8 +325,8 @@
                                 a1 +=a1_v;
                                 a2 +=a2_v;
 
-                                //a1_v=0.9995*a1_v;
-                                //a2_v=0.9995*a2_v;
+                                a1_v=0.9995*a1_v;
+                                a2_v=0.9995*a2_v;
 
                                 canvas.beginDraw();
                                 canvas.translate(cx,cy);
