@@ -235,35 +235,35 @@
                           <section class="resume-section" id="interests">
                             <div class="resume-section-content">
                               <h2 class="mb-5">Languages</h2>
-                              <h4> <span>English &nbsp;&nbsp;-&nbsp;&nbsp; German &nbsp;&nbsp;-&nbsp;&nbsp; Nepalese&nbsp;&nbsp;-&nbsp;&nbsp; Hindi&nbsp;&nbsp;-&nbsp;&nbsp; Tamil</span></h4>
+                              <h5> <span>English &nbsp;&nbsp;-&nbsp;&nbsp; German &nbsp;&nbsp;-&nbsp;&nbsp; Nepalese&nbsp;&nbsp;-&nbsp;&nbsp; Hindi&nbsp;&nbsp;-&nbsp;&nbsp; Tamil</span></h5>
                               <p></p>
                               <p></p>
                               <h2 class="mb-5">Interests</h2>
-                              <div class="col-sm-5">
+                              <div class="col-sm-9">
                                 <p><i class="fas fa-camera" style="font-size:48px;margin-right:45px;"></i> Photography</p>
 
                               </div>
-                              <div class="col-sm-5">
+                              <div class="col-sm-9">
                                 <p><i class="fas fa-bicycle" style="font-size:48px;margin-right:30;"></i> Cycling</p>
                               </div>
-                              <div class="col-sm-5">
+                              <div class="col-sm-9">
                                 <p><i class="fas fa-futbol"style="font-size:48px;margin-right:40px;"></i> Football</p>
                               </div>
-                              <div class="col-sm-5">
+                              <div class="col-sm-9">
                                 <p><i class="fas fa-headphones"style="font-size:48px;margin-right:45px;"></i> Music</p>
                               </div>
-                              <div class="col-sm-5">
+                              <div class="col-sm-9">
                                 <p><i class="fas fa-walking"style="font-size:48px;margin-right:65px;"></i>Hiking</p>
                               </div>
-                              <div class="col-sm-5">
+                              <div class="col-sm-9">
                                 <p><i class="fas fa-gamepad"style="font-size:48px;margin-right:30px;"></i> Games</p>
                               </div>
 
                             </div>
                             <div>
                               <script type="text/processing">
-                              float r1=100;
-                              float r2=100;
+                              float r1=150;
+                              float r2=150;
                               float m1=20;
                               float m2=20;
                               float a1=PI/2;
@@ -272,7 +272,7 @@
                               float a1_a=0.01;
                               float a2_v=0;
                               float a2_a=0.01;
-                              float g=0.9;
+                              float g=0.5;
                               float prev_1=0;
                               float prev_2=0;
                               float cx;
@@ -282,7 +282,7 @@
                               PGraphics canvas;
 
                               void setup(){
-                                size(450,315);
+                                size(620,410);
                                 cx=width/2;
                                 cy=100;
                                 canvas= createGraphics(width,height);
@@ -325,8 +325,8 @@
                                 a1 +=a1_v;
                                 a2 +=a2_v;
 
-                                a1_v=0.9995*a1_v;
-                                a2_v=0.9995*a2_v;
+                                //a1_v=0.9995*a1_v;
+                                //a2_v=0.9995*a2_v;
 
                                 canvas.beginDraw();
                                 canvas.translate(cx,cy);
@@ -342,7 +342,7 @@
 
 
                               }
-                              </script>
+                          </script>
                             <canvas id="sketch" style="border:1px solid white;"></canvas>
                             <p style="text-align:center">Fig: Double Pendulum Simulation <br>(Equal mass and rope length)</p>
                             </div>
