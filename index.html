@@ -9,6 +9,7 @@
   <link rel="icon" type="image/x-icon" href="assets/img/favicon1.ico" />
   <!-- Font Awesome icons (free version)-->
   <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+  <script text="text/javascript" src="processing.js"></script>
   <!-- Google fonts-->
   <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
@@ -259,7 +260,92 @@
                               </div>
 
                             </div>
-                          </div>
+                            <div>
+                              <script type="text/processing">
+                              float r1=100;
+                              float r2=100;
+                              float m1=20;
+                              float m2=20;
+                              float a1=PI/2;
+                              float a2=PI/2;
+                              float a1_v=0;
+                              float a1_a=0.01;
+                              float a2_v=0;
+                              float a2_a=0.01;
+                              float g=0.5;
+                              float prev_1=0;
+                              float prev_2=0;
+                              float cx;
+                              float cy;
+                              float k=0;
+                              float l=0;
+                              PGraphics canvas;
+
+                              void setup(){
+                                size(450,310);
+                                cx=width/2;
+                                cy=100;
+                                canvas= createGraphics(width,height);
+                                canvas.beginDraw();
+                                canvas.background(255);
+                                canvas.endDraw();
+                              }
+
+                              void draw(){
+
+                                float num1=-g*(2*m1+m2)*sin(a1)-m2*g*sin(a1-2*a2)-2*sin(a1-a2)*m2*(a2_v*a2_v*r2+a1_v*a1_v*r1*cos(a1-a2));
+                                float den1=r1*(2*m1+m2-m2*cos(2*a1-2*a2));
+                                a1_a=num1/den1;
+
+                                float num2=2*sin(a1-a2)*(a1_v*a1_v*r1*(m1+m2)+g*(m1+m2)*cos(a1)+ a2_v*a2_v*r2*m2*cos(a1-a2));
+                                float den2=r2*(2*m1+m2-m2*cos(2*a1-2*a2));
+                                a2_a=num2/den2;
+
+
+                                //background(255);
+                                image(canvas,0,0);
+                                stroke(0);
+                                strokeWeight(2);
+                                translate(cx,cy);
+
+                                float x1=r1*sin(a1);
+                                float y1=r1*cos(a1);
+                                line(0,0,x1,y1);
+                                fill(0);
+                                ellipse(x1,y1,m1,m1);
+
+                                float x2=x1+r2*sin(a2);
+                                float y2=y1+r2*cos(a2);
+                                line(x1,y1,x2,y2);
+                                fill(0);
+                                ellipse(x2,y2,m2,m2);
+
+                                a1_v +=a1_a;
+                                a2_v +=a2_a;
+                                a1 +=a1_v;
+                                a2 +=a2_v;
+                                //a1_v=0.9999*a1_v;
+                                //a2_v=0.9999*a2_v;
+
+                                canvas.beginDraw();
+                                canvas.translate(cx,cy);
+                                canvas.strokeWeight(2);
+                                canvas.stroke(0);
+                                if(frameCount>1){
+                                  line(prev_1,prev_2,x2,y2);
+                                  line(k,l,prev_1,prev_2)
+                                }
+                                canvas.endDraw();
+                                prev_1=x2;
+                                prev_2=y2;
+                                k=prev_1;
+                                l=prev_2;
+
+                              }
+                              </script>
+                            <canvas id="sketch" style="border:1px solid white;"></canvas>
+                            <p style="text-align:center">Fig: Double Pendulum Simulation</p>
+                            </div>
                         </section>
                         <hr class="m-0" />
                         <!-- Awards-->
