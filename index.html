@@ -272,7 +272,7 @@
                               float a1_a=0.01;
                               float a2_v=0;
                               float a2_a=0.01;
-                              float g=0.3;
+                              float g=0.5;
                               float prev_1=0;
                               float prev_2=0;
                               float cx;
@@ -324,27 +324,27 @@
                                 a2_v +=a2_a;
                                 a1 +=a1_v;
                                 a2 +=a2_v;
-                                //a1_v=0.9999*a1_v;
-                                //a2_v=0.9999*a2_v;
+
+                                //a1_v=0.9995*a1_v;
+                                //a2_v=0.9995*a2_v;
 
                                 canvas.beginDraw();
                                 canvas.translate(cx,cy);
                                 canvas.strokeWeight(2);
                                 canvas.stroke(0);
                                 if(frameCount>1){
-                                  line(prev_1,prev_2,x2,y2);
-                                  line(k,l,prev_1,prev_2)
+                                  canvas.line(prev_1,prev_2,x2,y2);
+
                                 }
                                 canvas.endDraw();
                                 prev_1=x2;
                                 prev_2=y2;
-                                k=prev_1;
-                                l=prev_2;
+
 
                               }
                               </script>
                             <canvas id="sketch" style="border:1px solid white;"></canvas>
-                            <p style="text-align:center">Fig: Double Pendulum Simulation</p>
+                            <p style="text-align:center">Fig: Double Pendulum Simulation <br>(Equal mass and rope length)</p>
                             </div>
                         </section>
                         <hr class="m-0" />
